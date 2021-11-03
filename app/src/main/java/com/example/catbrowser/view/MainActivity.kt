@@ -1,7 +1,8 @@
-package com.example.catbrowser
+package com.example.catbrowser.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.catbrowser.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
