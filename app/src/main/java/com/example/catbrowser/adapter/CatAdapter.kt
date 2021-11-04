@@ -9,12 +9,8 @@ import com.example.catbrowser.extensions.loadUrl
 import com.example.catbrowser.model.Breed
 import androidx.core.content.ContextCompat.startActivity
 import android.content.Intent
-import android.os.Bundle
 import android.util.Log
-import androidx.annotation.Nullable
-import androidx.core.content.ContextCompat
 import com.example.catbrowser.view.DetailActivity
-import com.example.catbrowser.view.MainActivity
 
 
 class CatAdapter : RecyclerView.Adapter<CatAdapter.CatViewHolder>() {
@@ -51,6 +47,7 @@ class CatAdapter : RecyclerView.Adapter<CatAdapter.CatViewHolder>() {
             ivImage.setOnClickListener{
                 Log.d("give me name", tvCatName.text.toString())
                 val intent = Intent(it.context, DetailActivity::class.java)
+                intent.putExtra("CAT_IMAGE", breed.image?.url)
                 intent.putExtra("CAT_DESCRIPTION", breed.description)
                 startActivity(it.context, intent, null)
             }

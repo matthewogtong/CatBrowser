@@ -28,8 +28,6 @@ class MainActivity : AppCompatActivity() {
             (binding.rvImages.adapter as CatAdapter).updateBreeds(it)
         }
 
-        // onCreate Variables
-
     }
 
     private fun initViews() = with(binding) {
@@ -38,12 +36,6 @@ class MainActivity : AppCompatActivity() {
             viewModel.getBreeds()
         }
         rvImages.adapter = CatAdapter()
-        swSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
-            (rvImages.layoutManager as GridLayoutManager).spanCount = if (isChecked) 2 else 1
-            buttonView.text =
-                if (isChecked) getString(R.string.grid) else getString(R.string.linear)
-
-        }
     }
 
 }
