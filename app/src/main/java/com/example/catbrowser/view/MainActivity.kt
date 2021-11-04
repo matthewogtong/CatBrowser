@@ -16,12 +16,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        initViews()
+//        initViews()
 
         viewModel.breeds.observe(this) {
             // Here is where your will get the result
             Log.d("MainActivity", "onCreate: $it")
-            (binding.rvImages.adapter as ShibeAdapter).updateUrls(it)
+//            (binding.rvImages.adapter as ShibeAdapter).updateUrls(it)
         }
     }
 }
