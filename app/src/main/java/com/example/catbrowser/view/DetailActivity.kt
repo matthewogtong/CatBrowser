@@ -17,6 +17,7 @@ class DetailActivity : AppCompatActivity() {
         val catName = intent.getStringExtra("CAT_NAME")
         val catImageUrl = intent.getStringExtra("CAT_IMAGE")
         val catDescription = intent.getStringExtra("CAT_DESCRIPTION")
+        val catOrigin = intent.getStringExtra("CAT_ORIGIN")
 
         // Implement Intents into this Detail Activity
         binding.catName.text = catName
