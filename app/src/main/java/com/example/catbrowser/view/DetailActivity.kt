@@ -11,6 +11,6 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         val catDescription = intent.getStringExtra("CAT_DESCRIPTION")
-        binding.catDetails.text = catDescription
+        binding.catDescription.text = catDescription
     }
 }
