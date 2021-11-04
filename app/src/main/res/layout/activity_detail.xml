@@ -33,6 +33,12 @@
         android:layout_height="wrap_content"
         android:text="Description"
         app:layout_constraintTop_toBottomOf="@id/cat_description"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/cat_temperaments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Temperaments"
+        app:layout_constraintTop_toBottomOf="@id/cat_origin"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

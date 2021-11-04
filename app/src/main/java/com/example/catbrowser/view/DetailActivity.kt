@@ -25,6 +25,6 @@ class DetailActivity : AppCompatActivity() {
             binding.catImage.loadUrl(catImageUrl)
         }
         binding.catDescription.text = catDescription
-        binding.catOrigin.text = catOrigin
+        binding.catOrigin.text = "Origin: ${catOrigin}"
     }
 }
