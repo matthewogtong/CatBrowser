@@ -18,9 +18,13 @@ class CatViewModel : ViewModel() {
         viewModelScope.launch(Dispatchers.IO) {
             val response = CatRepo.getBreeds()
             val list = if (response.isSuccessful && !response.body().isNullOrEmpty())
-                response.body()
+                response.body() as List<Breed>
             else listOf("ERROR")
-            _breeds.postValue(list!! as List<Breed>?)
+            _breeds.postValue(list as List<Breed>?)
         }
+    }
+
+    fun getCatNames() {
+
     }
 }

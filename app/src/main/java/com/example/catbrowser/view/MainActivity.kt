@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.catbrowser.R
 import com.example.catbrowser.adapter.CatAdapter
 import com.example.catbrowser.databinding.ActivityMainBinding
+import com.example.catbrowser.databinding.ItemImageBinding
 import com.example.catbrowser.viewmodel.CatViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -22,14 +23,13 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.breeds.observe(this) {
             // Here is where your will get the result
-            Log.d("MainActivity", "onCreate: $it")
-            (binding.rvImages.adapter as CatAdapter).updateUrls(it)
+            Log.d("give me names", it[0].name.toString())
+            (binding.rvImages.adapter as CatAdapter).updateBreeds(it)
         }
     }
 
     private fun initViews() = with(binding) {
         btnFetch.setOnClickListener {
-//            val count = binding.etCount.text?.toString()?.toIntOrNull()
 
             viewModel.getBreeds()
         }

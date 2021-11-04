@@ -8,36 +8,36 @@ import com.example.catbrowser.extensions.loadUrl
 import com.example.catbrowser.model.Breed
 
 class CatAdapter : RecyclerView.Adapter<CatAdapter.CatViewHolder>() {
-    private val urls = mutableListOf<Breed>()
+    private val breeds = mutableListOf<Breed>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CatViewHolder {
         return CatViewHolder.getInstance(parent)
     }
 
     override fun onBindViewHolder(holder: CatViewHolder, position: Int) {
-        holder.loadUrl(urls[position])
+        holder.loadInfo(breeds[position])
     }
 
     override fun getItemCount(): Int {
-        return urls.size
+        return breeds.size
     }
 
-    fun updateUrls(urls: List<Breed>) {
-        val size = this.urls.size
-        this.urls.clear()
+    fun updateBreeds(breeds: List<Breed>) {
+        val size = this.breeds.size
+        this.breeds.clear()
         notifyItemRangeRemoved(0, size)
 
-        this.urls.addAll(urls)
-        notifyItemRangeInserted(0, urls.size)
+        this.breeds.addAll(breeds)
+        notifyItemRangeInserted(0, breeds.size)
     }
 
     class CatViewHolder(
         private val binding: ItemImageBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun loadUrl(url: Breed) = with(binding) {
-            ivImage.loadUrl(url)
-            tvUrl.text = url.toString()
+        fun loadInfo(breed: Breed) = with(binding) {
+            breed?.image?.url?.let { ivImage.loadUrl(it) }
+            tvCatName.text = breed.name
         }
 
         companion object {

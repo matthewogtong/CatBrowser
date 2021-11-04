@@ -19,7 +19,7 @@ data class Breed (
     val description: String?,
     @Json(name = "life_span")val lifeSpan: String?,
     val indoor: Int?,
-    val lap: Int??,
+    val lap: Int?,
     @Json(name = "alt_names")val altNames: String?,
     val adaptability: Int?,
     @Json(name = "affection_level")val affectionLevel: Int?,
