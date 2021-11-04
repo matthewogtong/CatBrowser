@@ -18,6 +18,7 @@ class DetailActivity : AppCompatActivity() {
         val catImageUrl = intent.getStringExtra("CAT_IMAGE")
         val catDescription = intent.getStringExtra("CAT_DESCRIPTION")
         val catOrigin = intent.getStringExtra("CAT_ORIGIN")
+        val catTemperaments = intent.getStringExtra("CAT_TEMPERAMENTS")
 
         // Implement Intents into this Detail Activity
         binding.catName.text = catName
@@ -26,5 +27,7 @@ class DetailActivity : AppCompatActivity() {
         }
         binding.catDescription.text = catDescription
         binding.catOrigin.text = "Origin: ${catOrigin}"
+        binding.catTemperaments.text = "Temperaments: ${catTemperaments}"
+
     }
 }
