@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CatBrowser</string>
+    <string name="linear" />
+    <string name="fetch" />
 </resources>
