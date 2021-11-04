@@ -10,5 +10,7 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        val catDescription = intent.getStringExtra("CAT_DESCRIPTION")
+        binding.catDetails.text = catDescription
     }
 }
