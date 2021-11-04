@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-//        initViews()
+        initViews()
 
         viewModel.breeds.observe(this) {
             // Here is where your will get the result
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initViews() = with(binding) {
         btnFetch.setOnClickListener {
-            val count = binding.etCount.text?.toString()?.toIntOrNull()
+//            val count = binding.etCount.text?.toString()?.toIntOrNull()
 
             viewModel.getBreeds()
         }
