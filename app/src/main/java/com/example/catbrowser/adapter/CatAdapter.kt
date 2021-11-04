@@ -1,11 +1,25 @@
 package com.example.catbrowser.adapter
 
+import android.R.attr
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.catbrowser.databinding.ItemImageBinding
 import com.example.catbrowser.extensions.loadUrl
 import com.example.catbrowser.model.Breed
+import androidx.core.content.ContextCompat.startActivity
+
+import android.R.attr.password
+
+import android.R.attr.name
+
+import android.content.Intent
+import android.os.Bundle
+import android.util.Log
+import androidx.core.content.ContextCompat
+import com.example.catbrowser.view.DetailActivity
+import com.example.catbrowser.view.MainActivity
+
 
 class CatAdapter : RecyclerView.Adapter<CatAdapter.CatViewHolder>() {
     private val breeds = mutableListOf<Breed>()
@@ -38,6 +52,11 @@ class CatAdapter : RecyclerView.Adapter<CatAdapter.CatViewHolder>() {
         fun loadInfo(breed: Breed) = with(binding) {
             breed?.image?.url?.let { ivImage.loadUrl(it) }
             tvCatName.text = breed.name
+            ivImage.setOnClickListener{
+                Log.d("give me name", tvCatName.text.toString())
+                val intent = Intent(it.context, DetailActivity::class.java)
+                startActivity(it.context, intent, Bundle())
+            }
         }
 
         companion object {
