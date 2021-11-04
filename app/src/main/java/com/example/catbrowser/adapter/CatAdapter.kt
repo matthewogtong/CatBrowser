@@ -50,6 +50,7 @@ class CatAdapter : RecyclerView.Adapter<CatAdapter.CatViewHolder>() {
                 intent.putExtra("CAT_NAME", breed.name)
                 intent.putExtra("CAT_IMAGE", breed.image?.url)
                 intent.putExtra("CAT_DESCRIPTION", breed.description)
+                intent.putExtra("CAT_ORIGIN", breed.origin)
                 startActivity(it.context, intent, null)
             }
         }
