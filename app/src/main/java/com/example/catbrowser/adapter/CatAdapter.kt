@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.catbrowser.databinding.ItemImageBinding
+import com.example.catbrowser.extensions.loadUrl
 import com.example.catbrowser.model.Breed
 
 class CatAdapter : RecyclerView.Adapter<CatAdapter.CatViewHolder>() {
@@ -36,7 +37,7 @@ class CatAdapter : RecyclerView.Adapter<CatAdapter.CatViewHolder>() {
 
         fun loadUrl(url: Breed) = with(binding) {
             ivImage.loadUrl(url)
-            tvUrl.text = url
+            tvUrl.text = url.toString()
         }
 
         companion object {
@@ -48,7 +49,7 @@ class CatAdapter : RecyclerView.Adapter<CatAdapter.CatViewHolder>() {
                     false
                 )
 
-                return getInstance(binding)
+                return CatViewHolder(binding)
             }
         }
     }

@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.catbrowser.R
+import com.example.catbrowser.adapter.CatAdapter
 import com.example.catbrowser.databinding.ActivityMainBinding
 import com.example.catbrowser.viewmodel.CatViewModel
 
@@ -21,7 +23,22 @@ class MainActivity : AppCompatActivity() {
         viewModel.breeds.observe(this) {
             // Here is where your will get the result
             Log.d("MainActivity", "onCreate: $it")
-//            (binding.rvImages.adapter as ShibeAdapter).updateUrls(it)
+            (binding.rvImages.adapter as CatAdapter).updateUrls(it)
+        }
+    }
+
+    private fun initViews() = with(binding) {
+        btnFetch.setOnClickListener {
+            val count = binding.etCount.text?.toString()?.toIntOrNull()
+
+            viewModel.getBreeds()
+        }
+        rvImages.adapter = CatAdapter()
+        swSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+            (rvImages.layoutManager as GridLayoutManager).spanCount = if (isChecked) 2 else 1
+            buttonView.text =
+                if (isChecked) getString(R.string.grid) else getString(R.string.linear)
+
         }
     }
 }
