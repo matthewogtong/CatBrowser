@@ -12,8 +12,14 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        // Retrieve MainActivity Intents and declare variables
+        val catName = intent.getStringExtra("CAT_NAME")
         val catImageUrl = intent.getStringExtra("CAT_IMAGE")
         val catDescription = intent.getStringExtra("CAT_DESCRIPTION")
+
+        // Implement Intents into this Detail Activity
+        binding.catName.text = catName
         if (catImageUrl != null) {
             binding.catImage.loadUrl(catImageUrl)
         }

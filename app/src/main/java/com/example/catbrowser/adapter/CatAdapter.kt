@@ -47,6 +47,7 @@ class CatAdapter : RecyclerView.Adapter<CatAdapter.CatViewHolder>() {
             ivImage.setOnClickListener{
                 Log.d("give me name", tvCatName.text.toString())
                 val intent = Intent(it.context, DetailActivity::class.java)
+                intent.putExtra("CAT_NAME", breed.name)
                 intent.putExtra("CAT_IMAGE", breed.image?.url)
                 intent.putExtra("CAT_DESCRIPTION", breed.description)
                 startActivity(it.context, intent, null)
