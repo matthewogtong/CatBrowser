@@ -12,7 +12,7 @@
         android:layout_height="200dp"
         android:background="@color/purple_200"
         android:scaleType="fitXY"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"/>
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"/>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_cat_name"
