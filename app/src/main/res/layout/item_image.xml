@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="8dp">
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -10,7 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@color/purple_200"
-        android:scaleType="fitXY"/>
+        android:scaleType="fitXY"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize10Percent"
+        app:strokeColor="@color/black"
+        app:strokeWidth="3dp"/>
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_cat_name"

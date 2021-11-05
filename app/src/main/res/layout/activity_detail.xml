@@ -11,28 +11,38 @@
         android:text="Cat Details"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-    <ImageView
+        app:layout_constraintEnd_toEndOf="parent" />
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/cat_image"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cat_name"
-        app:layout_constraintEnd_toEndOf="parent"/>
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/cat_description"
-        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:shapeAppearance="@style/ShapeAppearanceOverlay.App.MaterialCardView"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/black"/>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cat_description_card"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Description"
         app:layout_constraintTop_toBottomOf="@id/cat_image"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/cat_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_mono_bold"
+            android:text="Description" />
+    </com.google.android.material.card.MaterialCardView>
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/cat_origin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Description"
-        app:layout_constraintTop_toBottomOf="@id/cat_description"
+        android:text="Origin"
+        app:layout_constraintTop_toBottomOf="@id/cat_description_card"
         app:layout_constraintStart_toStartOf="parent" />
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/cat_temperaments"
@@ -41,4 +51,38 @@
         android:text="Temperaments"
         app:layout_constraintTop_toBottomOf="@id/cat_origin"
         app:layout_constraintStart_toStartOf="parent" />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/cat_life_span"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Life Span"
+        app:layout_constraintTop_toBottomOf="@id/cat_temperaments"
+        app:layout_constraintStart_toStartOf="parent" />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/cat_stats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="STATS"
+        app:fontFamily="@font/roboto_mono_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cat_life_span" />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/cat_indoor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Indoor"
+        app:fontFamily="@font/roboto_mono_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cat_stats" />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/cat_lap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lap"
+        app:fontFamily="@font/roboto_mono_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cat_indoor" />
 </androidx.constraintlayout.widget.ConstraintLayout>
