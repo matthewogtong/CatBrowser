@@ -1,11 +1,17 @@
 package com.example.catbrowser.adapter
 
+import android.R.attr
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.catbrowser.databinding.ItemImageBinding
 import com.example.catbrowser.extensions.loadUrl
 import com.example.catbrowser.model.Breed
+import androidx.core.content.ContextCompat.startActivity
+import android.content.Intent
+import android.util.Log
+import com.example.catbrowser.view.DetailActivity
+
 
 class CatAdapter : RecyclerView.Adapter<CatAdapter.CatViewHolder>() {
     private val breeds = mutableListOf<Breed>()
@@ -38,6 +44,16 @@ class CatAdapter : RecyclerView.Adapter<CatAdapter.CatViewHolder>() {
         fun loadInfo(breed: Breed) = with(binding) {
             breed?.image?.url?.let { ivImage.loadUrl(it) }
             tvCatName.text = breed.name
+            ivImage.setOnClickListener{
+                Log.d("give me name", tvCatName.text.toString())
+                val intent = Intent(it.context, DetailActivity::class.java)
+                intent.putExtra("CAT_NAME", breed.name)
+                intent.putExtra("CAT_IMAGE", breed.image?.url)
+                intent.putExtra("CAT_DESCRIPTION", breed.description)
+                intent.putExtra("CAT_ORIGIN", breed.origin)
+                intent.putExtra("CAT_TEMPERAMENTS", breed.temperament)
+                startActivity(it.context, intent, null)
+            }
         }
 
         companion object {

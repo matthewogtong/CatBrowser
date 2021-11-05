@@ -1,10 +1,13 @@
 package com.example.catbrowser.model
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import kotlinx.android.parcel.Parcelize
 
 // converting JSON into object
 @JsonClass(generateAdapter = true)
+@Parcelize
 data class Breed (
     val weight: Weight,
     val id: String?,
@@ -44,16 +47,20 @@ data class Breed (
     val hypoallergenic: Int?,
     @Json(name = "reference_image_id")val referenceImageId: String?,
     val image: Image?
-)
+) : Parcelable
+
 @JsonClass(generateAdapter = true)
+@Parcelize
 data class Weight (
     val imperial: String?,
     val metric: String?,
-)
+) : Parcelable
+
 @JsonClass(generateAdapter = true)
+@Parcelize
 data class Image (
     val id: String?,
     val width: Int?,
     val height: Int?,
     val url: String?,
-)
+) : Parcelable

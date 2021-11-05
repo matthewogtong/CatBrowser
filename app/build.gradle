@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt' // This is needed to use kapt [aka kotlin's annotation processor]
+    id "kotlin-parcelize"
 }
 
 android {
