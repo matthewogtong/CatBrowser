@@ -58,4 +58,31 @@
         android:text="Life Span"
         app:layout_constraintTop_toBottomOf="@id/cat_temperaments"
         app:layout_constraintStart_toStartOf="parent" />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/cat_stats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="STATS"
+        app:fontFamily="@font/roboto_mono_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cat_life_span" />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/cat_indoor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Indoor"
+        app:fontFamily="@font/roboto_mono_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cat_life_span" />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/cat_lap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lap"
+        app:fontFamily="@font/roboto_mono_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cat_life_span" />
 </androidx.constraintlayout.widget.ConstraintLayout>
