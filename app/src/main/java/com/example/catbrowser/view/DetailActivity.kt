@@ -32,7 +32,7 @@ class DetailActivity : AppCompatActivity() {
         binding.catOrigin.text = "Origin: ${catOrigin}"
         binding.catTemperaments.text = "Temperaments: ${catTemperaments}"
         binding.catLifeSpan.text = "Life Span: ${catLifeSpan}"
-        binding.catIndoor.text = "Indoor - ${catIndoor}"
+        binding.catIndoor.text = "Indoor - ${if(catIndoor !== null) catIndoor else "N/A"}"
         binding.catLap.text = "Lap - ${catLap}"
 
     }
