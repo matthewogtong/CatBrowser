@@ -19,6 +19,7 @@ class DetailActivity : AppCompatActivity() {
         val catDescription = intent.getStringExtra("CAT_DESCRIPTION")
         val catOrigin = intent.getStringExtra("CAT_ORIGIN")
         val catTemperaments = intent.getStringExtra("CAT_TEMPERAMENTS")
+        val catLifeSpan = intent.getStringExtra("LIFE_SPAN")
 
         // Implement Intents into this Detail Activity
         binding.catName.text = catName
@@ -28,6 +29,7 @@ class DetailActivity : AppCompatActivity() {
         binding.catDescription.text = catDescription
         binding.catOrigin.text = "Origin: ${catOrigin}"
         binding.catTemperaments.text = "Temperaments: ${catTemperaments}"
+        binding.catLifeSpan.text = "Life Span: ${catLifeSpan}"
 
     }
 }
