@@ -18,7 +18,10 @@
         android:layout_height="200dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cat_name"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:shapeAppearance="@style/ShapeAppearanceOverlay.App.MaterialCardView"
+        app:strokeWidth="5dp"
+        app:strokeColor="@color/black"/>
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/cat_description"
         android:layout_width="wrap_content"
