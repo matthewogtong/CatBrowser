@@ -11,7 +11,8 @@
         android:text="Cat Details"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:fontFamily="@font/roboto"/>
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/cat_image"
         android:layout_width="match_parent"
@@ -20,7 +21,7 @@
         app:layout_constraintTop_toBottomOf="@id/cat_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:shapeAppearance="@style/ShapeAppearanceOverlay.App.MaterialCardView"
-        app:strokeWidth="5dp"
+        app:strokeWidth="1dp"
         app:strokeColor="@color/black"/>
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/cat_description"
